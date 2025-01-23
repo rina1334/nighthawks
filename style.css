@@ -55,7 +55,8 @@ body {
   #nighthawkslogo {
     display: block;
     margin: 20px auto 0 auto;
-    max-width: 370px;
+    width: 90%;
+    max-width: 400px;
     animation: float 2s infinite ease-in-out;
   }
 
