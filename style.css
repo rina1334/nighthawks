@@ -48,14 +48,14 @@ body {
   }
 
   header p {
-    font-size: 1.2em;
+    font-size: 10%;
     margin-top: 10px;
   }
 
   #nighthawkslogo {
     display: block;
     margin: 20px auto 0 auto;
-    max-width: 400px;
+    width:40%;
     animation: float 2s infinite ease-in-out;
   }
 
@@ -75,7 +75,6 @@ body {
   }
 
   .team-members, .outreach-content {
-    display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
@@ -88,8 +87,11 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 15px;
     text-align: center;
-    flex: 1 1 calc(33.33% - 20px);
     transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .team-members div{
+    width: 80%;
   }
 
   .team-members div:hover, .text div:hover {
@@ -204,6 +206,7 @@ footer {
 
 #fourthPage {
     display: none;
+    margin-bottom: 5%;
 }
 
 #fifthPage {
@@ -246,7 +249,7 @@ section h1,h2 {
 
 /* Section text */
 section p, li {
-    font-size: 1.2em;
+    font-size: 95%;
     line-height: 1.6;
     text-align: center;
     color: #1a3abc;
@@ -327,8 +330,7 @@ section p, li {
 .images img {
   border: 2px solid black;
   border-radius: 30px;
-  width: 30%;
-  height: 30%;
+  width: 40%;
 }
 
 .images{
@@ -341,6 +343,7 @@ iframe {
   margin:auto;
   display:block;
   border-radius: 30px;
+  display: flex;
 }
 
 #map {
