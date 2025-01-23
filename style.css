@@ -43,7 +43,7 @@ body {
   }
 
   header h1 {
-    font-size: 3em;
+    font-size: 30px;
     margin: 0;
   }
 
@@ -241,7 +241,7 @@ footer {
 section h1,h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2.5em;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     text-shadow:1.5px 1.5px 0 rgba(0, 7, 108, 0.674);
@@ -287,7 +287,8 @@ section p, li {
 } */
 
 #firstPage h1, h2 {
-    font-size: 2.5em;
+    font-size: 90%;
+    font-size: 40px;
     color: rgb(247, 150, 233);
     text-align: center;
 
