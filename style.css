@@ -29,6 +29,7 @@ body {
     margin: 0 15px;
     font-weight: 700;
     transition: color 0.3s, transform 0.3s;
+    font-size: 90%;
   }
 
   nav a:hover {
