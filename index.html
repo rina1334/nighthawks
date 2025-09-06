@@ -6,17 +6,31 @@
   <title>Nighthawk Robotics FTC #11943</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav>
-        <a href="#home" id="homeLink" target="_top">Home</a>
-        <a href="#teamHeading" id="teamLink" target="_parent">Meet the Team</a>
-        <a href="#outreachHeading" id="outreachLink" target="_top">Outreach</a>
-        <a href="#robotHeading" id="robotLink" target="_top">Robot</a>
-        <a href="#contactHeading" id="contactLink" target="_top">Contact</a>
-    </nav>
+<nav>
+  <div id="navLeft">
+    <img src="whitenighthawks.png" id="navImg" alt="Nighthawks Logo">
+    <div id="navOne"><p>Nighthawks #11943</p></div>
+  </div>
+  <!-- Links -->
+  <div id="linknav">
+    <a href="#home" id="homeLink" target="_top">Home</a>
+    <a href="#teamHeading" id="teamLink" target="_parent">Team</a>
+    <a href="#outreachHeading" id="outreachLink" target="_top">Outreach</a>
+    <a href="#robotHeading" id="robotLink" target="_top">Robot</a>
+    <a href="#contactHeading" id="contactLink" target="_top">Contact</a>
+  </div>
+  <!-- Hamburger -->
+  <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+</nav>
 
-
+<div id="main">
     <div id="firstPage">
     <header id="home" class="homeback">
         <section>
@@ -26,7 +40,7 @@
         </section>
     </header>
     <div class="divider"></div>
-    <section id="about" class="hidden">
+    <section id="aboutOutreach" class="hidden">
         <h2>About the Team</h2>
         <p>We are a gender minority team from the Nightingale-Bamford School.<br> Our team is committed group of engineers, coders, artists, and gamers formed in 2017 who bring diverse <br>perspectives to solve problems in creative ways.</p>
         <img src="images.png" alt="School Logo" class="section-image">
@@ -50,89 +64,71 @@
 
     <div id="secondPage">
     <section id="team" class="hidden">
-        <h2 id="teamHeading">Meet the Team</h2>
+        <h2 id="teamHeading">Meet the team</h2>
         <div class="team-members">
             <div>
-                <h3>Morgan</h3>
-                <p>Role: Co-captain, Engineer</p>
-                <p>Grade: 12</p>
-                <p>Years on team: 4</p>
+                <h3>Fiona</h3>
+                <p>Role: Co-captain, Engineer, CAD</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 3</p>
             </div>
             <div>
-                <h3>Isabelle</h3>
+                <h3>Claire</h3>
                 <p>Role: Co-captain, Programmer</p>
-                <p>Grade: 12</p>
-                <p>Years on team: 4</p>
-            </div>
-            <div>
-                <h3>Emma</h3>
-                <p>Role: Outeach</p>
-                <p>Grade: 12</p>
-                <p>Years on team: 4</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 3</p>
             </div>
             <div>
                 <h3>Shrujana</h3>
+                <p>Role: Outreach</p>
+                <p>Grade: 12</p>
+                <p>Years on team: 4</p>
+            </div>
+            <div>
+                <h3>Alisha</h3>
+                <p>Role: Engineer</p>
+                <p>Grade: 12</p>
+                <p>Years on team: 3</p>
+            </div>
+            <div>
+                <h3>Ash</h3>
                 <p>Role: Outreach</p>
                 <p>Grade: 11</p>
                 <p>Years on team: 3</p>
             </div>
             <div>
-                <h3>Alisha</h3>
+                <h3>Sukhayna</h3>
+                <p>Role: Engineer, CAD</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 3</p>
+            </div>
+            <div>
+                <h3>Annabel</h3>
+                <p>Role: Engineer, CAD</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 2</p>
+            </div>
+            <div>
+                <h3>Summer</h3>
+                <p>Role: Engineer, Outreach, CAD</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 2</p>
+            </div>
+            <div>
+                <h3>Alex</h3>
+                <p>Role: Engineer, Outreach, CAD</p>
+                <p>Grade: 11</p>
+                <p>Years on team: 2</p>
+            </div>
+            <div>
+                <h3>Elyssa</h3>
                 <p>Role: Engineer</p>
                 <p>Grade: 11</p>
                 <p>Years on team: 2</p>
             </div>
             <div>
-                <h3>Claire</h3>
-                <p>Role: Programmer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 2</p>
-            </div>
-            <div>
-                <h3>Fiona</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 2</p>
-            </div>
-            <div>
-                <h3>Ash</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 2</p>
-            </div>
-            <div>
-                <h3>Sukhayna</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 2</p>
-            </div>
-            <div>
-                <h3>Annabel</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 1</p>
-            </div>
-            <div>
-                <h3>Summer</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 1</p>
-            </div>
-            <div>
-                <h3>Alex</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 1</p>
-            </div>
-            <div>
-                <h3>Elyssa</h3>
-                <p>Role: Engineer</p>
-                <p>Grade: 10</p>
-                <p>Years on team: 1</p>
-            </div>
-            <div>
                 <h3>Misha</h3>
-                <p>Role: Engineer</p>
+                <p>Role: Engineer, Outreach</p>
                 <p>Grade: 9</p>
                 <p>Years on team: 1</p>
             </div>
@@ -143,7 +139,7 @@
                 <p>Years on team: 1</p>
             </div>
             <div>
-                <h3>Juliana</h3>
+                <h3>Mr. Sucre</h3>
                 <p>Role: Mentor</p>
                 <p>Years on team: 1</p>
             </div>
@@ -153,44 +149,90 @@
 
     <div id="thirdPage">
     <section id="outreach">
-        <h2 id="outreachHeading">Outreach</h2>
-        <div class="outreach-content">
-            <div class="text">
-                <div>
-                    <h3>In-School Programs</h3>
+        <div class="programs-section">
+            <section class="grid-container hidden">
+                <div class="grid-item">
+                    <h3>In School programs</h3>
                     <p>Engaging with students to inspire future engineers.</p>
-                    <p>Elementary School: <br> We taught kindergarteners simple machines with our robot, making lessons interactive and encouraging early STEM exploration.</p>
-                    <p>Middle School: <br> We introduced middle schoolers to FIRST through a sustainability-themed robot activity, inspiring future Robotics team members.</p>
-                    <p>Team Collaboration: We exchanged strategies and ideas with FTC team Polymorphism via Zoom.</p>
+                    <p><strong>Elementary School:</strong> <br> Each year, we teach kindergarteners simple machines with our robot, making lessons interactive and encouraging early STEM exploration.</p>
+                    <p><strong>Middle School: </strong><br> We introduce middle schoolers to FIRST through various activities, inspiring future Robotics team members.</p>
+                    <p><strong>High school: </strong><br>Finally, recruit new members through interest meetings and club fairs.</p>
                 </div>
-                <br>
-                <div>
+            </section>
+            <div class="divider"></div>
+            <section class="hidden">
+                <div class="grid-item">
                     <h3>Events</h3>
-                    <p>Gender Minorities in FTC Event: <br> Dr. Lucia Perez, a Computational Astrophysicist & Cosmologist presented at our event last year. Dr. Perez is a great inspiration and motivator to our aspiring scientists in male-dominated fields. Her status as an alumna allows students to see themselves in her position in the near future.</p>
+                    <p>Going into the STEM industry as a woman can prove to be difficult.<br> Each year, we bring alumni from our school from various STEM fields to talk about their careers and give advice to aspiring students,<br> further opening more possibilities for young girls in the future.</p>
                 </div>
-                <br>
-                <div>
-                    <h3>Social Media</h3>
-                    <p>Follow us on Instagram: <a href="https://www.instagram.com/nighthawk_robotics/"> @nighthawk_robotics</a></p>
+            </section>
+            <div class="divider"></div>
+            <section class="grid-container hidden">
+                <div class="grid-item">
+                    <h3>Team Collaboration</h3>
+                    <p>We exchanged strategies and ideas with FTC team Polymorphism via Zoom. <br>We also take the team to Cornell Tech at Tata Innovation Center <br>to connect with other teams while providing insight to one another.</p>
                 </div>
-                <br>
-                <div class="images">
-                    <img src="outreach1.png" alt="Workshop with kindergarteners" id="outreachimg1">
-                    <img src="outreach2.png" alt="Activity with middle school">
+            </section>
+            <div class="divider"></div>
+            <section class="grid-container hidden" id="carousel">
+                <div class="grid-item">
+                        <div class="carousel" id="carousel">
+                        <button class="carousel-btn prev" onclick="plusDivs(-1)">&#10094;</button>
+                        <div class="slide mySlides">
+                            <h3>Events</h3>
+                            <img src="lucia.png">
+                            <p>Gender Minorities in FTC Event: <br> Dr. Lucia Perez, a Computational Astrophysicist & Cosmologist, presented at our event in 2024. Dr. Perez is a great inspiration and motivator to our aspiring scientists in male-dominated fields. Her status as an alumna allows students to see themselves in her position in the near future.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>Events</h3>
+                            <img src="xanthe.png">
+                            <p>Gender Minorities in FTC Event: <br> Xanthe Thomas, an Enviornmental Engineer, was able to join us through zoom in 2025. Xanthe was amazing at telling us her journey, relating her memories to the young girls at our school.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>In-School Programs</h3>
+                            <img src="kingergarten.jpg">
+                            <p>This past year, we had activities to let the students identify simple machines in everyday life (engineering), which was a change that we made after we realized we wanted to show them applications of STEM. Additionally, we had a maze to program through using bee bots (programming), and driving the drive train (driveteam).</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>In-School Programs</h3>
+                            <img src="thinkery.jpg">
+                            <p>During this event, we had a short presentation about our team. We split the students up into two groups. The first group did coding on code.org and the second group drew pictures using a drivetrain connected to a marker.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>In-School Programs</h3>
+                            <img src="outreach1.png">
+                            <p>This was a sustainability-themed robot activity for kindergarteners in 2024.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>In-School Programs</h3>
+                            <img src="outreach2.png">
+                            <p>We let middle schoolers take turns driving the robot in 2022.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>Team Collaboration</h3>
+                            <img src="polymorph.png">
+                            <p>A zoom meeting with Polymorphism gave us insight on what to improve on during the Into The Deep season.</p>
+                        </div>
+                        <div class="slide mySlides">
+                            <h3>Social Media</h3>
+                            <img src="insta.png">
+                            <p>Follow us on Instagram! We do unique content like ASMR at qualifiers to gain a larger audience.</p>
+                        </div>
+                    
+                    <button class="carousel-btn next" onclick="plusDivs(+1)">&#10095;</button>
                 </div>
-            </div>
-        </div>
-    </div>
-            </div>
+            </section>
         </div>
     </section>
     </div>
 
 
     <div id="fourthPage">
-        <h2 id="robotHeading"robot></h2>
         <section id="about" class="hidden">
             <h2>Points</h2>
+            <div id="centering">
+                <img src="robot.png" id="robotImg">
+            </div>
             <p>This year, during the autonomous and end-game periods, we are able to score <strong>79 points.</strong></p>
             <p>Our team is capable of scoring 1 preloaded sample and 3 samples from the field in the high basket<br> before teleop. <strong>This gives us a 64 point auto. <br><br></strong>
             During the teleop period, we plan on <strong>scoring samples in the high basket,</strong><br> but we are also able to score in the low basket. <br><br>
@@ -212,10 +254,12 @@
         <p>Instagram: </strong><a href="https://www.instagram.com/nighthawk_robotics/">@nighthawk_robotics</a></p>
     </section>
     </div>
-
+</div>
 
     <footer>
+        <aside>
         <p>&copy; 2025 The Nighthawks FTC 11943</p>
+        </aside>
     </footer>
 
     <script src="script.js"></script>

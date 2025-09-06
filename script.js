@@ -21,6 +21,14 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 let firstPage = document.getElementById("firstPage");
 let secondPage = document.getElementById("secondPage");
 let thirdPage = document.getElementById("thirdPage");
@@ -96,5 +104,38 @@ document.addEventListener("DOMContentLoaded", () => {
     revealOnScroll();
   });
   
+const hamburger = document.getElementById('hamburger');
+  const linknav  = document.getElementById('linknav');
 
+  hamburger.addEventListener('click', () => {
+    const isOpen = linknav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Optional: close the menu when a link is tapped (mobile QoL)
+  linknav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      linknav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+
+let slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
 

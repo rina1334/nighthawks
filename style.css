@@ -9,37 +9,131 @@ body {
     padding: 0;
     overflow-x: hidden;
     background: linear-gradient(to bottom right, #506ad5, #eb97cd);
-  }
-
-  nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    flex-direction: column;
+  }
+
+/* Navbar base */
+nav {
+  display: flex;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1778;
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  box-shadow: 0 4px 6px rgba(14,12,82,0.3);
+  padding: 0px 20px;
+}
+
+#navLeft { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  justify-self: start;
+}
+
+#navImg  { 
+  height: 50px; 
+  margin-right: 4px; 
+}
+
+#linknav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+#navOne, #navImg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#linknav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+}
+
+#linknav a, #navOne {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color .25s, transform .25s;
+  font-size: 90%;
+}
+
+#linknav a:hover, #navOne:hover {
+  color: #b9abe8;
+  transform: scale(1.08);
+}
+
+
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;   /* center the bars */
+  align-items: center;       /* center horizontally */
+  cursor: pointer;
+  gap: 6px;                  /* space between bars */
+  width: 40px;               /* square size */
+  height: 40px;              /* same as width */
+  padding: 0;                /* reset padding */
+  background: #1e1778;       /* match navbar background */
+  border: none;              /* remove border */
+}
+
+#hamburger div {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  #linknav {
+    display: none;
+    position: absolute;
+    top: 100%;        /* just below navbar */
+    right: 0;         /* stick to right edge */
+    left: auto;       /* cancel the desktop centering */
+    transform: none;  /* remove centering transform */
+    width: auto;
+    min-width: 180px;
     background-color: #1e1778;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1500;
-    box-shadow: 0 4px 6px rgba(14, 12, 82, 0.3);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 10px;
+    z-index: 1000;
+    border-radius: 0 0 0 8px;
   }
 
-  nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    transition: color 0.3s, transform 0.3s;
-    font-size: 90%;
+  #linknav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
   }
 
-  nav a:hover {
-    color: #b9abe8;
-    transform: scale(1.1);
+  #linknav.open {
+    display: flex;
   }
+
+  #hamburger {
+    display: flex;
+  }
+}
 
   header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 20px 0px 20px;
     animation: fadeIn 1.5s ease-out;
   }
 
@@ -62,13 +156,13 @@ body {
   }
 
   section {
-    padding: 50px 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
     animation: slideUp 1s ease-out;
   }
 
-  .about img {
+  .about img{
     display: block;
     margin: 20px auto;
     max-width: 150px;
@@ -76,13 +170,15 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
+  
+
   .team-members, .outreach-content {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
   }
 
-  .team-members div, .text div {
+  .team-members div {
     background: white;
     color: #222;
     border-radius: 10px;
@@ -92,37 +188,9 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  .team-members div{
-    width: 80%;
-  }
-
-  .team-members div:hover, .text div:hover {
+  .team-members div:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-  }
-
-  .outreach-layout {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .outreach-layout .text {
-    flex: 1;
-  }
-
-  .outreach-layout .images {
-    flex: 1;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .outreach-layout {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
   footer {
@@ -130,36 +198,23 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: auto;
+    bottom: 0;
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideUp {
-    from {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
   }
 
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
 .section-image {
@@ -170,11 +225,14 @@ body {
 }
 
 .team-members {
-    display: flex;
     justify-content: center;
     gap: 20px;
     margin: 20px 0;
-    flex-wrap: wrap;
+    display: flex;  
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
 }
 
 .team-members div {
@@ -192,39 +250,25 @@ footer {
     padding: 20px;
     margin-top: 40px;
     box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.3);
+    height: 40px;
 }
 
-#firstPage {
-    display: block;
-}
-
-#secondPage {
-    display: none;
-}
-
-#thirdPage {
-    display: none;
-}
-
-#fourthPage {
-    display: none;
-    margin-bottom: 8%;
-}
-
-#fifthPage {
-    display: none;
-}
+#firstPage { display: block; }
+#secondPage { display: none; }
+#thirdPage { display: none; }
+#fourthPage { display: none; margin-bottom: 8%; }
+#fifthPage { display: none; }
 
 .divider {
     height: 4px;
     background: linear-gradient(to right, #768ce3, #ed7aed);
-    margin: 40px auto;
+    margin: 20px auto 0 auto;
     width: 80%;
     border-radius: 2px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-#firstPage section, #secondPage, #thirdPage, #fourthPage, #fifthPage {
+#firstPage section, #secondPage, #fourthPage, #fifthPage, #row div {
     background-color: rgba(243, 243, 243, 0.9);
     border-radius: 30px;
     border: 2px solid #1a3abc;;
@@ -240,7 +284,7 @@ footer {
 }
 
 /* Section heading */
-section h1,h2 {
+section h1, h2, #thirdPage h3 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 90%;
@@ -276,34 +320,15 @@ section p, li {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* #firstPage h1, h2 {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    transition: color 0.3s, transform 0.3s;
-  } */
-/* #firstPage h1:hover, h2:hover {
-    color: #4e45ff;
-    transform: scale(1.1);
-} */
-
-#firstPage h1, h2 {
+#firstPage h1, h2, #thirdPage h3 {
     font-size: 30px;
     color: rgb(247, 150, 233);
     text-align: center;
-
-    /* text-shadow: 0 0 5px #c542a2, 0 0 10px #c542a2, 0 0 20px #c542a2, 0 0 40px #c542a2, 0 0 80px #1a3abc;
-    animation: glow 1.5s infinite alternate; */
 }
 
 @keyframes glow {
-    from {
-        text-shadow: 0 0 5px #c542a2, 0 0 10px #c542a2, 0 0 20px #c542a2, 0 0 40px #c542a2, 0 0 80px #1a3abc;
-    }
-    to {
-        text-shadow: 0 0 10px #c542a2, 0 0 20px #c542a2, 0 0 30px #c542a2, 0 0 50px #c542a2, 0 0 100px #1a3abc;
-    }
+    from { text-shadow: 0 0 5px #c542a2, 0 0 10px #c542a2, 0 0 20px #c542a2, 0 0 40px #c542a2, 0 0 80px #1a3abc; }
+    to { text-shadow: 0 0 10px #c542a2, 0 0 20px #c542a2, 0 0 30px #c542a2, 0 0 50px #c542a2, 0 0 100px #1a3abc; }
 }
 
 /* Initial hidden state for elements */
@@ -313,17 +338,13 @@ section p, li {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   
-  /* Reveal animation when the element is visible */
-  .revealed {
+/* Reveal animation when the element is visible */
+.revealed {
     opacity: 1;
     transform: translateY(0);
   }
-  
-/* #teamHeading {
-    color: rgba(253, 130, 230, 0.839);
-} */
 
-#secondPage, #thirdPage, #fourthPage, #fifthPage {
+#secondPage, #fourthPage, #fifthPage {
     width: 83%;
     margin-left: 7.7%;
     margin-top: 4.1%;
@@ -338,7 +359,6 @@ section p, li {
 .images{
   grid-row: 1 / 3;
   flex-wrap: wrap;
-
 }
 
 iframe {
@@ -356,10 +376,132 @@ iframe {
   border-radius: 30px;
 }
 
-/* img, iframe {
-  height: auto;
-} */
+#outreachimg1 { margin-right: 5%; }
 
-#outreachimg1 {
-  margin-right: 5%;
+.flexy { display: flex; }
+
+#main { min-height: calc(100vh - 40px); }
+
+#row { display: flex; margin-bottom: 20px; }
+
+#row div { padding: 20px; }
+
+#marginright { margin-right: 20px; }
+
+.outreachSec { display: flex; margin-top: 20px; }
+
+.outreachSec img { max-width: 384px; }
+
+#text { justify-content: center; display:flex; flex: wrap; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
+.grid-item {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;   /* center the bars */
+    align-items: center;  
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.carousel, #centering {
+  max-width: 650px;
+  height:auto;
+  position: relative;
+  overflow: hidden; /* keeps slides contained */
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.carousel {
+  height: 690px;
+}
+
+#robotImg {
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  #robotImg {
+    max-width: 90%;        /* shrink more on smaller screens */
+    border-radius: 20px;   /* optional: soften corners */
+    padding: 0 10px;       /* less side padding on very small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #robotImg {
+    max-width: 100%;       /* take full width if needed */
+    padding: 0 5px;        /* keep tiny bit of space */
+  }
+}
+
+.slide {
+  display: none; /* only one visible at a time */
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 10px; }
+
+.carousel-btn.next { right: 10px; }
+
+.carousel-btn:hover { background: rgba(0,0,0,0.7); }
+
+.grid-item {
+  border-radius: 30px;
+  border: 2px solid #1a3abc;
+}
+
+/* ============================= */
+/* Minimal overrides for #thirdPage spacing to match #firstPage */
+/* ============================= */
+
+#thirdPage { 
+  padding-top: 40px !important;   /* same top offset as #firstPage header */
+}
+
+#thirdPage .programs-section > section {
+  /* remove extra vertical padding that was pushing dividers away */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* keep divider spacing identical and explicit on thirdPage */
+#thirdPage .divider {
+  margin: 50px auto !important;
+}
+/*
+WHEN INTERACTIVE VIEW IN FIRST PAGE THE DIV WIDTHS ARE DIFFERENT/*
